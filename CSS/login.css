@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ecf0f1;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    width: 70%;
+    height: 70%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    border-radius: 18px;
+}
+.content:before{
+    content: "";
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    position: absolute;
+    background-color: #00b4d8;
+}
+.title{
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.title-primeiro{
+    color: #fff;
+}
+.title-segundo{
+    color: #00b4d8;
+}
+.descricao{
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 25px;
+}
+.descricao-primeiro{
+    color: #fff;
+}
+.descricao-segundo{
+    color: #7f8c8d;
+}
+.btn{
+    width: 155px;
+    border-radius: 30px;
+    font-size: 10px;
+    padding: 10px 40px;
+    margin-top: 1rem;
+    border: none;
+    background-color: #ecf0f1;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center;
+}
+.btn-primario{
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+.btn-primario:hover{
+    background-color: #fff;
+    color: #00b4d8;
+}
+.btn-segundo{
+    background-color: #00b4d8;
+    border: 1px solid #00b4d8;
+    transition: background-color .5s;
+}
+.btn-segundo:hover{
+    background-color: #fff;
+    border: 1px solid #00b4d8;
+    color: #00b4d8;
+}
+/*primeiro conteúdo*/
+.first-content{
+    display: flex;
+}
+.first-content .second-column{
+    z-index: 11;
+}
+.first-column{
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+}
+.second-column{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lista-redesocial{
+    margin: 1rem 0;
+    display: flex;
+    list-style-type: none;
+}
+.item-redesocial{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    border:1px solid #bdc3c7;
+    text-align: center;
+}
+.item-redesocial a{ 
+    color: #95a5a6;
+}
+.item-redesocial:hover{ 
+    color: #fff;
+    background-color: #00b4d8;
+}
+.item-redesocial:not(:first-child){
+    margin-left: 10px;
+}
+.form{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}
+.form input{
+    width: 100%;
+    height: 45px;
+    border: none;
+    background-color: #ecf0f1;
+}
+input:-webkit-autofill { 
+    box-shadow: none;   
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
+.label-input{
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    background-color: #ecf0f1;
+}
+.icon{
+    color: #7f8c8d;
+    padding: 0 5px;
+}
+.DivLi{
+    width: 100%;
+    padding: 2% 0 2% 0;
+    display: flex;
+}
+.DivCol5{
+    width: 30%;
+    height: auto;
+    padding: 0 3%;
+    display: flex;
+} 
+#DivCol6{
+    width: 60%;
+}
+.footer{
+    width: 100%;
+    color: #caf0f8;
+    background-color: #00b4d8;
+}
+/*Segundo conteúdo*/
+.second-content{
+    position:absolute;
+    display: flex;
+}
+.second-content .first-column{
+    order: 2;
+}
+.second-content .second-column{
+    order: 1;
+}
+.senha{
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/*Java Script*/
+.Entrar-js .first-content .first-column{
+    z-index: -1;
+}
+
+.Entrar-js .second-content .second-content{
+    z-index: 11;
+}
+.Entrar-js .second-content .first-column{
+    z-index: 13;
+}
+
+.Entrar-js .content:before{
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slidein 2s;
+
+    z-index: 12;
+}
+.Cadastrar-js .content:before{
+    animation: slideout 2s;
+    z-index: 12;
+}
+.Cadastrar-js .second-content .first-column,
+.Cadastrar-js .second-content .second-content{
+    z-index: -1;
+}
+
+.Cadastrar-js .first-content .second-column{
+    z-index: 11;
+}
+.Cadastrar-js .first-content .first-column{
+    z-index: 13;
+}
+/*Deslocamento do conteúdo atrás do content:before*/
+.Entrar-js .first-content .second-column{
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEq 2s;
+}
+.Cadastrar-js .second-content .second-column{
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir 2s;
+}
+/*Animação CSS do conteúdo atrás do content:before*/
+@keyframes deslocamentoEq {
+    from{
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+    25%{
+        left: -80px;
+        opacity: .5;
+    }
+    50%{
+        left: -50px;
+        opacity: .2;
+    }
+    to{
+        left: -80px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDir{
+    from{
+        left: 0;
+        z-index: 12;
+    }
+    25%{
+        left: 80px;
+    }
+    50%{
+        left: 80px;
+    }
+    to{
+        left: 80px;
+        z-index: -1;
+    }
+}
+
+/*Animalção CSS para o conteúdo*/
+@keyframes slidein {
+    from {
+        left: 0;
+        width: 40%;
+    }
+    25%{
+        left: 20%;
+        width: 50%;
+    }
+    50%{
+        left: 30%;
+        width: 60%;
+    }
+    70%{
+        left: 45%;
+        width: 50%;
+    }
+    to {
+         left: 60%;
+         width: 40%;
+    }
+}
+
+@keyframes slideout {
+    from {
+        left: 60%;
+        width: 40%;
+    }
+    25%{
+        left: 45%;
+        width: 50%;
+    }
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    70%{
+        left: 15%;
+        width: 50%;
+    }
+    to {
+         left: 0%;
+         width: 40%;
+    }
+}
